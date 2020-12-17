@@ -1,0 +1,196 @@
+
+
+Objectives:
+    This lab is to learn programming with recursion. 
+
+Specification: 
+    Construct three pairs of C++ programs that both iteratively and recursively execute 
+	to solve the following problems: 
+	(1.i) lab4-1.i: factorial_iterative.cpp
+	(1.r) lab4-1.r: factorial_recursive.cpp
+	(2.i) lab4-2.i: binary_search_iterative.cpp
+	(2.r) lab4-2.r: binary_search_recursive.cpp
+    Your program should satisfy the following constraints:
+    - Must print all intermediate function calls with parameters and results for those calls.
+    - Must use the array implementation for the Binary_Search_List ADT (class).
+    - Must consist of at least 1 header file (*.h), at least 1 implementation files (*.cpp)
+	and 1 driver file (lab4_Dr.cpp) that includes a main function. 
+    - Must use at least 1 'class' constructs and must use 1 or more instances
+	instantiated from the classes defined. 
+    - Must use at least 1 'namespace' construct. 
+    - A name (for binary search) is 1-character length (as shown in the example I/O below).
+      However, you may use the generic data type to handle other types of names 
+      ONLY IF you like. Therefore, generic type is OPTIONAL, not required for this lab. 
+      (The next lab 'requires' the generic data type. Therefore, it is good to start it now.) 
+    - The maximum number of items (max size of array) is 100. 
+	Otherwise give a warning message. 
+    - (This is NOT required; this applies only when you use the generic type for names) The 
+	maximum size of a name item is 10 characters. Otherwise give a warning message. 
+    - Each function and variable must have comment (within 1 - 10 lines of comments). 
+    - Each function must have both pre-condition and post-condition in the comment section. 
+
+Process: 
+    Process all until (no-more-input). 
+
+	(For Factorial)
+	(1.i) Iteratively calculate factorials for each input value, and produce
+		both intermediate value with loop index and final result. 
+		Read values 1, 2, 3, 4 from the input file, and output their factorial results.
+		(also output all intermediate function calls with parameters and results from
+		 each function call) 
+
+	(1.r) Recursitvely calculate factorials for each input value and produce 
+		both intermediate and final results. 
+		(as shown in the textbook and as in class lectures) 	
+
+	
+	(for Binary_Search) 
+   	Read input (character) one by one from (a different) input file, and
+	construct a sorted array for binary search. 
+	Read the command 'search' from the input file and execute it. 
+	(1.i) Iteratively perform binary-search for each 'search' command. 
+		Print all intermediate loop index and contents. 
+	(2.r) Recursively perform binary-search for each 'search' command.  
+		Print all intermediate function parameters (before you call a recursive
+		function, such as 'from', 'mid' and/or 'to').
+		(The textbook p.429 shows a recursive version - Learn index: from, to, mid.)
+
+    You may use some example programs shown in the textbook or references. 
+	However, you must understand every line of the code you submit. 
+
+    Use the given input and use the same output format.
+    However, test your program with other input data sets (and different combination/sequence).
+    When grading, different data sets (with different sequence) can be also tested. 
+
+    Before you start programming, draw some diagrams for (both iterative and recursive) 
+	factorial calculations 'manually'. Compare it with the result of your program. 
+    Before you start programming, draw the binary search 'manually'. 
+	- Draw the binary search 'manually (using a pen and a paper)' to show 'step-by-step'
+	  how the binary search is done with each input data (like the output below).
+    While you run your program, compare your drawing with the computer outputs. 
+    Keep and submit the hand-drawn diagrams on the due date or presentation dates. 
+
+
+[Input and Output]
+
+For Factorial: 
+Input:  integer number: 1, 2, 3, 4 
+	(input file: "factorial.in") 
+Output: Output should look like the followings (Use the same output format). 
+	(Produce the same output to both the screen and the output file.)
+	Print the result of factorial calculations and their intermediate steps. 
+	(output file: "factorial.out") 
+
+	-- CPSC 131: Lab#4 (1.i & 1.r): Factorial -- 
+	-- 1 --
+	1
+	ifactorial(1) => index = 1 => 1
+	rfactorial(1) => rfactorial(1) => 1
+	(Your output does NOT need to exactly show the same contents. 
+	As long as you show some intermediate steps, it will be fine.) 
+
+	-- 2 --
+	2
+	ifactorial(2) => index = 1 => index = 2 => 1
+	rfactorial(2) => rfactorial(1) returns 1 => 2 * 1 = 1
+	(Your output does NOT need to exactly show the same contents. 
+	As long as you show some intermediate steps, it will be fine.) 
+
+	-- 3 --
+	3
+	ifactorial(3) => index = 1 => index = 2 => index = 3 => 6
+	rfactorial(3) => rfactorial(2) => rfactorial(1) => 3 * 2 * 1 = 1
+	(Your output does NOT need to exactly show the same contents. 
+	As long as you show some intermediate steps, it will be fine.) 
+
+	... (print the intermediate/final results in the similar way) ... 
+
+
+For Binary_Search: 
+Input:  Unsorted random input data from a file (use the following test data). 
+	(input file: "binarySearch.in")
+Output: Output should look like the followings (Use the same output format). 
+	(Produce the same output to both the screen and the output file.)
+	(output file: "binarySearch.out")
+
+Input: (1st Test Data - Character Type) 
+	(input file name: binarySearch.in) 
+	Insert E 
+	Insert F
+	Insert B
+	Insert C
+	Insert G
+ 	Insert H
+	Insert A
+	Insert D 
+	Insert I
+	Insert J
+	Insert K
+	Insert L 
+
+	iSearch A
+	rSearch A
+
+	iSearch L
+	rSearch L
+
+	iSearch B
+	rSearch B
+
+	iSearch K
+	rSearch K
+
+	iSearch M
+	rSearch M
+
+
+Output: (for the 1st Test Data) 
+	(output file name: binarySearch.out) 
+	-- CPSC 131: Lab#4 (2.i & 2.r): Binary Search -- 
+	-- 1 --
+	Insert: E
+	List: E 
+
+	-- 2 --
+	Insert: F
+	List: E, F 
+
+	-- 3 --
+	Insert: B
+	List: B, E, F 
+
+	... (insert/print in the similar way) ... 
+
+	-- 12 --
+	Insert: L
+	List: A, B, C, D, E, F, G, H, I, J, K, L 
+
+	... (insert/print in the similar way) ... 
+
+
+	-- 13 --
+	iSearch: A
+	index = 1, found 
+	(Your output does NOT need to exactly show the same contents. 
+	As long as you show some intermediate steps, it will be fine.) 
+
+	-- 14 --
+	rSearch: A
+	rSearch(item = A, from = 0, to = 11), found 
+	(Your output does NOT need to exactly show the same contents. 
+	As long as you show some intermediate steps, it will be fine.) 
+
+	... (insert/print in the similar way) ... 
+
+
+	-- 22 --
+	rSearch: M
+	rSearch(item = M, from = 0, to = 11), rSearch(item = M, from = 6, to = 11), ...,
+	..., ..., not-found 
+	(Your output does NOT need to exactly show the same contents. 
+	As long as you show some intermediate steps, it will be fine.) 
+
+	-- The End of CPSC 131 Lab#4 --                
+
+
+
